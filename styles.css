@@ -44,11 +44,30 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background-color: var(--dark-bg);
-    color: var(--text-light);
-    padding: 180px 0 100px;
+    background-image: url('assets/desk-office.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 180px 0 1px;
     position: relative;
     overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 18, 39, 0.5);
+    z-index: 0;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-section h1 {
@@ -70,18 +89,20 @@ body {
 }
 
 .hero-image {
-    text-align: right;
     position: relative;
-    z-index: 1;
+    background-color: transparent;
+    mix-blend-mode: normal;
+    text-align: right;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
 }
+
 
 .hero-profile-img {
     max-width: 80%;
     height: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .hero-image img {
@@ -136,17 +157,26 @@ body {
 
 .social-links {
     margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+
+}
+
+.social-links p {
+    font-weight: 600;
 }
 
 .social-icon {
-    color: var(--dark-bg);
+    color: rgba(0, 18, 39, 0.5);
     font-size: 1.2rem;
     margin-right: 1rem;
     transition: color 0.3s ease;
 }
 
 .social-icon:hover {
-    color: var(--primary-color);
+    color: rgba(0, 18, 39, 0.5);
 }
 
 /* Services Section */
@@ -160,7 +190,7 @@ body {
     text-align: center;
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
     margin-bottom: 2rem;
     height: 100%;
@@ -392,11 +422,11 @@ body {
     .stat-item {
         padding: 1.5rem;
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .portfolio-item img {
         height: 250px;
     }
@@ -414,7 +444,7 @@ body {
     .services-image-right {
         margin-top: 50px;
     }
-    
+
     .service-item {
         padding: 25px;
     }
@@ -433,7 +463,7 @@ body {
     .stat-item {
         margin-bottom: 2rem;
     }
-    
+
     .client-logo {
         max-width: 100px;
         margin-bottom: 1.5rem;
@@ -447,7 +477,7 @@ body {
         max-width: 100%;
         margin-bottom: 2rem;
     }
-    
+
     .service-card {
         padding: 1.5rem;
     }
@@ -455,13 +485,13 @@ body {
     .service-item {
         padding: 20px;
     }
-    
+
     .service-icon {
         width: 40px;
         height: 40px;
         font-size: 20px;
     }
-    
+
     .service-item h4 {
         font-size: 18px;
     }
@@ -487,6 +517,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -590,4 +621,4 @@ body {
     .social-links {
         text-align: center !important;
     }
-} 
+}
